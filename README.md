@@ -52,7 +52,23 @@ git clone https://github.com/0sigma101/LendFlow.git
 
 <h2>Install Dependencies</h2>
 
+
+```yaml
+1: Install node js
+2: Setup Metamask
+3: Install truffle suite
+4: install ganache
+5: Add the network of ganache to metamask](https://docs.metamask.io/wallet/get-started/run-development-network/)
+```
+
 ```bash
+
+cd LendFlow
+npm install
+pip install  -r requirement.txt
+truffle init
+truffle migrate
+truffle deploy
 
 ```
 
@@ -62,7 +78,6 @@ git clone https://github.com/0sigma101/LendFlow.git
 1: Right Click on Index.html 
 2: Open with live server
 ```
-
 # 🚀 Tech Stacks 
 <p align="left">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="45" height="45" />
