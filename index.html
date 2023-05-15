@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LendFlow - Create Loan Request</title>
+  <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body>
+  <h1>LendFlow - Create Loan Request</h1>
+  <form id="loanForm" onsubmit="event.preventDefault(); createLoanRequest();">
+    <label for="amount">Loan Amount:</label>
+    <input type="text" id="amount" name="amount" required><br>
+
+    <label for="interestRate">Interest Rate:</label>
+    <input type="text" id="interestRate" name="interestRate" required><br>
+
+    <label for="duration">Loan Duration (in days):</label>
+    <input type="text" id="duration" name="duration" required><br>
+
+    <input type="submit" value="Create Loan Request">
+  </form>
+
+  <script>
+    // Connect to the Ethereum network
+    const web3 = new Web3('http://localhost:8545');
+
+    // Set the account that will create the loan request
+    const accountAddress = '0x...'; // Replace with the actual account address
+    web3.eth.defaultAccount = accountAddress;
+
+    // Load the LoanContract ABI and address
+    const contractAbi = [
+      // Contract ABI goes here
+    ];
+    const contractAddress = '0x...'; // Replace with the actual contract address
+
+    // Create a new instance of the LoanContract
+    const loanContract = new web3.eth.Contract(contractAbi, contractAddress);
+
+    // Function to create the loan request
+    function createLoanRequest() {
+      const amount = document.getElementById('amount').value;
+      const interestRate = document.getElementById('interestRate').value;
+      const duration = document.getElementById('duration').value;
+
+      // Convert values to BigNumber format
+      const amountInWei = web3.utils.toWei(amount.toString());
+      const interestRateInWei = web3.utils.toWei(interestRate.toString());
+      const durationInSeconds = duration * 24 * 60 * 60;
+
+      loanContract.methods.createLoanRequest(amountInWei, interestRateInWei, durationInSeconds)
+        .send({ from: accountAddress })
+        .then(() => {
+          console.log('Loan request created successfully!');
+          // Reset the form after successful submission
+          document.getElementById('loanForm').reset();
+        })
+        .catch((error) => {
+          console.error('Failed to create loan request:', error);
+        });
+    }
+  </script>
+</body>
+</html>

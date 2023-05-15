@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <style>
+    /* Global styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    /* Profile page styles */
+    .profile-container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .profile-avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .profile-name {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .profile-info {
+      font-size: 16px;
+      color: #777;
+    }
+
+    .profile-details {
+      margin-bottom: 20px;
+    }
+
+    .profile-label {
+      font-weight: bold;
+    }
+
+    .profile-data {
+      margin-left: 10px;
+    }
+
+    .profile-actions {
+      text-align: center;
+    }
+
+    .profile-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .profile-button:hover {
+      background-color: #555;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 600px) {
+      .profile-container {
+        padding: 10px;
+      }
+
+      .profile-avatar {
+        width: 100px;
+        height: 100px;
+      }
+
+      .profile-name {
+        font-size: 20px;
+      }
+
+      .profile-info {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-container">
+    <div class="profile-header">
+      <img class="profile-avatar" src="profile-avatar.jpg" alt="Profile Avatar">
+      <h1 class="profile-name">John Doe</h1>
+      <p class="profile-info">Web Developer</p>
+    </div>
+    <div class="profile-details">
+      <p><span class="profile-label">Email:</span> <span class="profile-data">johndoe@example.com</span></p>
+      <p><span class="profile-label">Location:</span> <span class="profile-data">New York, USA</span></p>
+      <p><span class="profile-label">Bio:</span> <span class="profile-data">Passionate about building web applications and exploring new technologies.</span></p>
+    </div>
+    <div class="profile-actions">
+      <a class="profile-button" href="#">Edit Profile</a>
+    </div>
+  </div>
+</body>
+</html>
