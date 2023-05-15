@@ -7,9 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Team Maggi",
+  "license": "MIT",
   "dependencies": {
     "web3": "^0.20.7"
+  },
+  "devDependencies": {
+    "truffle": "5.4.0"
   }
 }
